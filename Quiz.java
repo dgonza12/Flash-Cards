@@ -12,6 +12,13 @@ public class Quiz {
     String Answer3;
     String Answer4;
 
+
+    public String toString(){
+        String s = getQuestion()+" [A]"+getAnswer1()+" [B]"+getAnswer2()+" [C]"+getAnswer3()+" [D]"+getAnswer4();
+        return s;
+    }
+
+
     public void shuffleAnswers(){
         String temp1 = Answer1;
         String temp2 = Answer2;
@@ -52,6 +59,8 @@ public class Quiz {
 
     }
 
+    public String getQuestion(){return Question;}
+
     public String getAnswer1() {
         return Answer1;
     }
@@ -68,3 +77,4 @@ public class Quiz {
         return Answer4;
     }
 }
+
