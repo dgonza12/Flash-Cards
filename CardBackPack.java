@@ -8,7 +8,7 @@ import java.util.Random;
  */
 public class CardBackPack  {
     public ArrayList<Card> Deck;
-    private int numberCorrect = 0;
+    public int numberCorrect = 0;
     Quiz CurrentQuiz;
     Card CurrentQuestion;
     int Index = 0;
@@ -20,6 +20,7 @@ public class CardBackPack  {
 
     public void AddCard(Card newcard){
         Deck.add(newcard);
+        System.out.println(newcard.toString());
     }
 
     public void Cleardeck(){
@@ -66,43 +67,50 @@ public class CardBackPack  {
     }
 
 
-    public void CheckAnswer(int i){
+    public String CheckAnswer(int i){
       Card temp = CurrentQuestion;
+      String s = "Wrong!";
       switch (i){
           case 1:
               if(temp.checkanswer(CurrentQuiz.Answer1)){
                   numberCorrect+=1;
+                  s = "Correct!";
               }else{
-                  System.out.println("Wrong");
+                  s = ("Wrong");
               }
 
               break;
           case 2:
               if(temp.checkanswer(CurrentQuiz.Answer2)){
                   numberCorrect+=1;
+                  s = "Correct!";
               }else{
-                  System.out.println("Wrong");
+                  s = ("Wrong");
               }
               break;
           case 3:
               if(temp.checkanswer(CurrentQuiz.Answer3)){
                   numberCorrect+=1;
+                  s = "Correct!";
               }else{
-                  System.out.println("Wrong");
+                  s = ("Wrong");
               }
               break;
           case 4:
               if(temp.checkanswer(CurrentQuiz.Answer4)){
                   numberCorrect+=1;
+                  s = "Correct!";
               }else{
-                  System.out.println("Wrong");
+                  s = ("Wrong");
               }
               break;
           default:
-              System.out.println("Wrong");
+              s = ("Wrong");
               break;
+
       }
       System.out.println("Number correct: "+numberCorrect);
+      return s;
     }
 
 }
