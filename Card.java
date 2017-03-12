@@ -1,5 +1,7 @@
 package com.company;
+
 import java.io.Serializable;
+
 /**
  * Created by danny on 2/8/17.
  */
@@ -21,12 +23,7 @@ public class Card implements Serializable{
     }
 
     public boolean checkanswer(String theanswer){
-        if (theanswer== Answer){
-            return true;
-        }else {
-            return false;
-        }
-
+        return theanswer == Answer;
     }
 
     @Override
@@ -35,3 +32,4 @@ public class Card implements Serializable{
                 .append(this.Answer).toString();
     }
 }
+
