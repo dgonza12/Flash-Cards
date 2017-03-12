@@ -77,4 +77,3 @@ public class Quiz {
         return Answer4;
     }
 }
-
